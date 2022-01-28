@@ -36,17 +36,13 @@ public class SwerveBase {
         double orientationBr = Math.atan2(desiredVectorYbr, desiredVectorXbr)-90;
         double magnitudeBr = Math.sqrt(Math.pow(desiredVectorXbr, 2) + Math.pow(desiredVectorYbr, 2));
 
-        fr.SetTargetAngleAndSpeed(orientationFr, magnitudeFr);
-        fl.SetTargetAngleAndSpeed(orientationFl, magnitudeFl);
-        bl.SetTargetAngleAndSpeed(orientationBl, magnitudeBl);
-        br.SetTargetAngleAndSpeed(orientationBr, magnitudeBr);
+        fr.SetTargetAngleAndSpeed(orientationFr, magnitudeFr, frAngle);
+        fl.SetTargetAngleAndSpeed(orientationFl, magnitudeFl, flAngle);
+        bl.SetTargetAngleAndSpeed(orientationBl, magnitudeBl, blAngle);
+        br.SetTargetAngleAndSpeed(orientationBr, magnitudeBr, brAngle);
 
 
 
-        //update the rotation of the module
-        fr.UpdateRotation(frAngle);
-        fl.UpdateRotation(flAngle);
-        bl.UpdateRotation(blAngle);
-        br.UpdateRotation(brAngle);
+
     }
 }
